@@ -25,7 +25,7 @@ def setup_database():
     cursor.execute("""CREATE TABLE IF NOT EXISTS user_metadata(
         user_id INTEGER UNIQUE REFERENCES credentials(id),
         major TEXT,
-        year int
+        year INTEGER
         )
         """)
     
