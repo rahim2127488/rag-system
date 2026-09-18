@@ -3,7 +3,7 @@ def add_user(name, email, password, major, year, db):
     
     connection = db
     cursor = connection.cursor()
-    password_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
+    password_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt().decode)
     cursor.execute("""INSERT INTO credentials (name, email, password_hash) 
                    VALUES (%s , %s, %s)
                    RETURNING id
@@ -14,3 +14,4 @@ def add_user(name, email, password, major, year, db):
                        """, (user_id, major, year,))
     
     connection.commit()
+    cursor.close()
