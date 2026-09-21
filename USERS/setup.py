@@ -38,7 +38,7 @@ def setup_database():
     
     
     cursor.execute(""" CREATE TABLE IF NOT EXISTS user_courses(
-        user_id_ INTEGER REFERENCES credentials(id),
+        user_id INTEGER REFERENCES credentials(id),
         course_id TEXT REFERENCES courses(course_id),
         progress TEXT DEFAULT 'not_started'
                 CHECK (progress IN ('not_started', 'in_progress', 'completed')),
