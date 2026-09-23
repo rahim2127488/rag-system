@@ -17,9 +17,9 @@ def setup_database():
         name TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
         password_hash TEXT NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
+        d_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        update
         """)
     
     cursor.execute("""CREATE TABLE IF NOT EXISTS user_metadata(

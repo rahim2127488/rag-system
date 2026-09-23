@@ -5,9 +5,9 @@ def delete_course(course_id, db):
     cursor = connection.cursor()
     cursor.execute("""DELETE FROM courses 
                     
-                   WHERE course__id = (%s)
+                   WHERE course_id = (%s)
                    
-                   """, course_id)
+                   """, course_id,)
     
     connection.commit()
     cursor.close()

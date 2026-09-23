@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends
-from RAG.LECTURE.models import LectureRequest
+from RAG.LECTURE.schemas import LectureRequest
 from RAG.LECTURE.services.lecture_retriever import lecture_retrieve
 from SHARED.dependencies import get_collection as collection
 
