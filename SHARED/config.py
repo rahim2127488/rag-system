@@ -9,6 +9,9 @@ class Settings(BaseSettings):
     postgresql_host: str = "localhost"
     postgresql_port: int = 5432
     postgresql_name: str
+    BASE_URL: str = SettingsConfigDict(env_file=".env")
+
+    
 
 
 settings = Settings()

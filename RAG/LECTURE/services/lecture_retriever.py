@@ -1,11 +1,12 @@
-def lecture_retrieve(collection, course, lesson, concept, top_k=5):
+def lecture_retrieve(collection, course, lesson, concept):
 
     results = collection.get(
         where={
             "$and" : [
                 {"course" : course},
                 {"lesson" : lesson},
-                {"concept": concept}
+                {"concept": concept},
+                {"content_type": "concept"}
             ]
         }
     )
@@ -35,4 +36,4 @@ def lecture_retrieve(collection, course, lesson, concept, top_k=5):
         key=lambda chunk: chunk["chunk_index"]
     )
 
-    return chunks[:top_k]
+    return chunks

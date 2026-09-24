@@ -437,10 +437,6 @@ def build_fallback_concepts(
                 is not None
             ):
 
-                # --------------------------------------
-                # Different numbered concept
-                # --------------------------------------
-
                 if (
                     current_concept is None
                     or
@@ -461,10 +457,6 @@ def build_fallback_concepts(
                         page_number
                     ]
 
-
-                # --------------------------------------
-                # Same numbered concept continues
-                # --------------------------------------
 
                 else:
 

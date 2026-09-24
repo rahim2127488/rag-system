@@ -42,7 +42,7 @@ def setup_database():
         course_id TEXT REFERENCES courses(course_id),
         progress TEXT DEFAULT 'not_started'
                 CHECK (progress IN ('not_started', 'in_progress', 'completed')),
-                UNIQUE(user_id_, course_id)
+                UNIQUE(user_id, course_id)
         )
        """)
     

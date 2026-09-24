@@ -1,11 +1,7 @@
 import math
+from SHARED.embeddings import generate_embedding
 
-from embedder import generate_embedding
 
-
-# --------------------------------------------------
-# V1 THRESHOLDS
-# --------------------------------------------------
 
 STRONG_BOUNDARY_GAP = 0.10
 
@@ -14,11 +10,6 @@ HIGH_TITLE_CONCEPT_SIMILARITY = 0.75
 LOW_TITLE_CONCEPT_SIMILARITY = 0.70
 
 MIN_TITLE_BODY_SIMILARITY = 0.75
-
-
-# --------------------------------------------------
-# COSINE SIMILARITY
-# --------------------------------------------------
 
 def cosine_similarity(
     vector_a,
@@ -62,9 +53,6 @@ def cosine_similarity(
     )
 
 
-# --------------------------------------------------
-# TEXT ↔ TEXT SIMILARITY
-# --------------------------------------------------
 
 def semantic_similarity(
     text_a,
@@ -87,10 +75,6 @@ def semantic_similarity(
         embedding_b
     )
 
-
-# --------------------------------------------------
-# CALCULATE 3 SIGNALS
-# --------------------------------------------------
 
 def calculate_boundary_signals(
     title,
@@ -127,10 +111,6 @@ def calculate_boundary_signals(
         "title_concept": title_concept
     }
 
-
-# --------------------------------------------------
-# DECIDE NEW CONCEPT OR CONTINUATION
-# --------------------------------------------------
 
 def starts_new_concept(
     title_body,
@@ -215,9 +195,5 @@ def starts_new_concept(
     ):
         return True
 
-
-    # --------------------------------------------------
-    # STILL UNCERTAIN
-    # --------------------------------------------------
 
     return None
